@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>С Днём Святого Валентина! ❤️</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Исправлен импорт шрифта (убран пробел) -->
+  <!-- Исправлен импорт шрифта: убран пробел после 'Dancing+Script' -->
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,16 +20,16 @@
   <!-- Центральный контент -->
   <div class="center" id="content">
     <!-- Экран 1 -->
-<div id="s1">
-  <div class="envelope">
-    <div class="envelope-content">
-      <div class="heart-icon">❤️</div>
-      <div class="love-text">love</div>
+    <div id="s1">
+      <div class="envelope">
+        <div class="envelope-content">
+          <div class="heart-icon">❤️</div>
+          <div class="love-text">love</div>
+        </div>
+      </div>
+      <h2>У меня для тебя письмо...</h2>
+      <button type="button" class="btn-retro" onclick="show(2)">Далее →</button>
     </div>
-  </div>
-  <h2>У меня для тебя письмо...</h2>
-  <button class="btn-retro" onclick="show(2)">Далее →</button>
-</div>
 
     <!-- Экран 2 -->
     <div id="s2" style="display:none;">
@@ -40,8 +40,8 @@
           <img src="https://i.pinimg.com/originals/2a/b4/75/2ab4751e78c75fcc2f746cd89ffec831.gif" alt="Смайлик">
         </div>
       </div>
-      <button class="btn-retro" onclick="openLetter()">Открыть</button>
-      <button class="btn-retro" onclick="askAgain()">Не-а</button>
+      <button type="button" class="btn-retro" onclick="openLetter()">Открыть</button>
+      <button type="button" class="btn-retro" onclick="askAgain()">Не-а</button>
     </div>
 
     <!-- Экран 3 -->
@@ -52,8 +52,8 @@
           <img src="https://i.pinimg.com/originals/de/5c/9b/de5c9bbc320f1d3d711a17d5c87d5d31.gif" alt="Бьющееся сердце">
         </div>
       </div>
-      <h2>Ну пожалуйста...<br>Давай ещё раз?(* ^ ω ^) </h2>
-      <button class="btn-retro" onclick="show(2)">Ещё раз..?</button>
+      <h2>Ну пожалуйста...<br>Давай ещё раз?(* ^ ω ^)</h2>
+      <button type="button" class="btn-retro" onclick="show(2)">Ещё раз..?</button>
     </div>
 
     <!-- Экран 4 -->
@@ -67,7 +67,7 @@
         </div>
       </div>
       <p class="hint">Нажми на кнопку! (っω⊂)つ ♥</p>
-      <button class="btn-retro" onclick="showFinal()">MeoW</button>
+      <button type="button" class="btn-retro" onclick="showFinal()">MeoW</button>
     </div>
 
     <!-- Экран 5 -->
@@ -78,6 +78,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

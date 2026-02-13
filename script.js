@@ -1,5 +1,5 @@
 // === ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ ===
-let currentScreen = 1;
+let currentScreen = 0; // начинаем с 0, чтобы избежать ложного совпадения
 
 // ДЛИННОЕ ПОЖЕЛАНИЕ
 const longMessage = 
@@ -29,19 +29,15 @@ function typeText(element, text, delay = 50) {
 
 // ОСНОВНАЯ ЛОГИКА — с защитой от дублей
 function show(n) {
-  // Защита: если уже показан — выходим
   if (currentScreen === n) return;
-  
-  // Скрываем все
+
   for (let i = 1; i <= 5; i++) {
     document.getElementById('s' + i).style.display = 'none';
   }
 
-  // Показываем новый
   document.getElementById('s' + n).style.display = 'block';
   currentScreen = n;
 
-  // Финал: печатаем текст
   if (n === 5) {
     const msgEl = document.getElementById('message');
     const sigEl = document.getElementById('signature');
@@ -50,6 +46,7 @@ function show(n) {
     sigEl.textContent = '';
     sigEl.style.opacity = '0';
     sigEl.style.transform = 'translateY(10px)';
+    sigEl.style.animation = 'none';
     
     typeText(msgEl, longMessage, 40).then(() => {
       setTimeout(() => {
@@ -60,7 +57,7 @@ function show(n) {
   }
 }
 
-// Кнопки
+// КНОПКИ
 function openLetter() { show(4); }
 function askAgain() { show(3); }
 function showFinal() { show(5); }
@@ -130,10 +127,9 @@ document.body.addEventListener('click', () => {
   bgm.play().catch(() => {});
 }, { once: true });
 
-// === ЗАПУСК — только один раз, после полной загрузки
+// === ЗАПУСК — только один раз
 window.addEventListener('load', () => {
-  // Убедимся, что s1 существует
-  if (document.getElementById('s1')) {
+  if (currentScreen === 0) {
     show(1);
   }
 });
