@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С Днём Святого Валентина! ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Исправлен импорт шрифта (убран пробел) -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Фоновая музыка -->
+  <audio id="bgm" loop preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_5a4c9e6b7d.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Падающие сердечки -->
+  <div id="hearts"></div>
+
+  <!-- Центральный контент -->
+  <div class="center" id="content">
+    <!-- Экран 1 -->
+<div id="s1">
+  <div class="envelope">
+    <div class="envelope-content">
+      <div class="heart-icon">❤️</div>
+      <div class="love-text">love</div>
+    </div>
+  </div>
+  <h2>У меня для тебя письмо...</h2>
+  <button class="btn-retro" onclick="show(2)">Далее →</button>
+</div>
+
+    <!-- Экран 2 -->
+    <div id="s2" style="display:none;">
+      <h2>Хочешь открыть? ✿(„• ᴗ •„)✿</h2>
+      <div class="gif-window">
+        <div class="gif-window-header"></div>
+        <div class="gif-window-content">
+          <img src="https://i.pinimg.com/originals/2a/b4/75/2ab4751e78c75fcc2f746cd89ffec831.gif" alt="Смайлик">
+        </div>
+      </div>
+      <button class="btn-retro" onclick="openLetter()">Открыть</button>
+      <button class="btn-retro" onclick="askAgain()">Не-а</button>
+    </div>
+
+    <!-- Экран 3 -->
+    <div id="s3" style="display:none;">
+      <div class="gif-window">
+        <div class="gif-window-header"></div>
+        <div class="gif-window-content">
+          <img src="https://i.pinimg.com/originals/de/5c/9b/de5c9bbc320f1d3d711a17d5c87d5d31.gif" alt="Бьющееся сердце">
+        </div>
+      </div>
+      <h2>Ну пожалуйста...<br>Давай ещё раз?(* ^ ω ^) </h2>
+      <button class="btn-retro" onclick="show(2)">Ещё раз..?</button>
+    </div>
+
+    <!-- Экран 4 -->
+    <div id="s4" style="display:none;">
+      <div style="font-size:30px; margin:15px 0;">❤️</div>
+      <h2>С Днём Святого Валентина!</h2>
+      <div class="gif-window">
+        <div class="gif-window-header"></div>
+        <div class="gif-window-content">
+          <img src="https://i.pinimg.com/originals/87/d6/16/87d616ee6ae455cbc0e83e20063c08c7.gif" alt="Hello Kitty">
+        </div>
+      </div>
+      <p class="hint">Нажми на кнопку! (っω⊂)つ ♥</p>
+      <button class="btn-retro" onclick="showFinal()">MeoW</button>
+    </div>
+
+    <!-- Экран 5 -->
+    <div id="s5" style="display:none;">
+      <h2>♥ С Днём Святого Валентина! ♥</h2>
+      <div class="msg" id="message"></div>
+      <div class="signature" id="signature"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
